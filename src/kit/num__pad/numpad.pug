@@ -1,0 +1,16 @@
+mixin numpad(items)
+    // На вход подаем чётный список
+    // Нечетный итем - h3, чётный id div
+    // counter - счетчик чётности, checker - остаток от деления, word - нечетный item
+    - var counter = 0
+    - var checker
+    - var word
+    each item in items
+      - var checker = counter % 2
+      if checker == 0
+        - word = item
+        - counter++
+      else
+        div(id= item) 
+          h3= word
+        - counter++

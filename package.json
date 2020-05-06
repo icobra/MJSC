@@ -1,0 +1,37 @@
+{
+  "name": "mjsc",
+  "version": "1.0.0",
+  "description": "mini js calculator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p",
+    "dev": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icobra/MJSC.git"
+  },
+  "keywords": [
+    "js",
+    "pug"
+  ],
+  "author": "icobra as Sasha Good",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icobra/MJSC/issues"
+  },
+  "homepage": "https://github.com/icobra/MJSC#readme",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-template-pug": "^1.1.1",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

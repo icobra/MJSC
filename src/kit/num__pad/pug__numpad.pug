@@ -1,0 +1,5 @@
+mixin numpad(items)
+    // На вход подаем список из {date:значение title:значение}
+    each item in items
+        div(id= item.date) 
+          h3= item.title

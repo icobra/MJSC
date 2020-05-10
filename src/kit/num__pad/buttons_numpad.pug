@@ -1,5 +1,4 @@
 mixin numpad(items)
-    form(class = "numpad")
-        //На вход подаем список из {date:значение title:значение}
-        each item in items
-            button(id= item.date value= item.title)= item.title
+    //На вход подаем список из {class: значение date:значение title:значение}
+    each item in items
+        button(class= item.class id= item.date value= item.title)= item.title

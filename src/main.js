@@ -1,6 +1,8 @@
 import './main.css';
 console.log('Mini JavaScript Calculator');
+// The main program code
 
+// Global variables
 var actual_value = 0; // Value received from the numpad.
 var action_value = ""; // Value like +, - , /, *
 var number_value = 0; // The value on the screen.
@@ -8,12 +10,14 @@ var memory_value = ""; // The value on calculator memory.
 var point_value = false; // The value of point of number.
 
 function clear_all(){
+    // Reset calculator / global variables 
     action_value = 0;
     memory_value ="";
     point_value = false;
 }
 
 function add_digit(actual_value){
+    // Add digit on calculator display
     let new_string;
     if (actual_value == 'C'){
         clear_all();
@@ -30,7 +34,10 @@ function add_digit(actual_value){
     return new_string
 };
 
+
 function add_point(){
+    // Add point to number on calculator display
+    // TO DO -> replace to add_digit()
     let new_string;
     if (point_value == false){
         new_string = number_value.toString() + actual_value.toString();
@@ -41,7 +48,9 @@ function add_point(){
     return new_string
 };
 
+
 function add_arithmetic(actual_value){
+    // Function to enter arichmetic value
     if (memory_value.toString().length == 0){
         memory_value = number_value;
         action_value = actual_value;
@@ -51,29 +60,19 @@ function add_arithmetic(actual_value){
     return number_value;
 };
 
-function answer(){
-    let new_string;
-    /*if (memory_value.toString().length == 0){
-    }*/
-    if(action_value == "+"){
-        new_string = parseFloat(memory_value) + parseFloat(number_value);
-        console.log('Hey hop');
-    }
-    if(action_value == "-"){
-        new_string = parseFloat(memory_value) - parseFloat(number_value);
-        console.log('Hey hop');
-    }
-    if(action_value == "*"){
-        new_string = parseFloat(memory_value) * parseFloat(number_value);
-        console.log('Hey hop');
-    }
-    if(action_value == "/"){
-        new_string = parseFloat(memory_value) / parseFloat(number_value);
-        console.log('Hey hop');
-    }
-
-    return new_string;
-};
+  
+var op = function(a, b) {return a;};
+var math_answer = {
+    // Return answer to programm
+    '+': function() {op = function(a, b)
+        {return parseFloat(a) + parseFloat(b); }; },
+    '-': function(a, b)
+        {return parseFloat(a) - parseFloat(b); },
+    '*': function(a, b)
+        {return parseFloat(a) * parseFloat(b); },
+    '/': function(a, b)
+        {return parseFloat(a) / parseFloat(b); }
+}
 
 
 $(document).ready(function() {
@@ -92,8 +91,11 @@ $(document).ready(function() {
         number_value = add_arithmetic(actual_value);
         $('#calcDisplay').text(number_value);
     });
-    $('.answer').click(function(){
-        number_value = answer();
+    $('.answer').click(function() {
+        let value = math_answer[action_value](memory_value, number_value);
+        number_value = value(memory_value, number_value);
+        console.log('Hey');
+        console.log(number_value);
         $('#calcDisplay').text(number_value);
     });
 });

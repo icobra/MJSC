@@ -16,6 +16,7 @@ function clear_all(){
     point_value = false;
 }
 
+
 function add_digit(actual_value){
     // Add digit on calculator display
     let new_string;
@@ -55,17 +56,15 @@ function add_arithmetic(actual_value){
         memory_value = number_value;
         action_value = actual_value;
         number_value = 0;
-        console.log(action_value);
     }
     return number_value;
 };
 
   
-var op = function(a, b) {return a;};
 var math_answer = {
     // Return answer to programm
-    '+': function() {op = function(a, b)
-        {return parseFloat(a) + parseFloat(b); }; },
+    '+': function(a, b)
+        {return parseFloat(a) + parseFloat(b); },
     '-': function(a, b)
         {return parseFloat(a) - parseFloat(b); },
     '*': function(a, b)
@@ -93,9 +92,7 @@ $(document).ready(function() {
     });
     $('.answer').click(function() {
         let value = math_answer[action_value](memory_value, number_value);
-        number_value = value(memory_value, number_value);
-        console.log('Hey');
-        console.log(number_value);
+        number_value = value;
         $('#calcDisplay').text(number_value);
     });
 });

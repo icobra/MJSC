@@ -1,4 +1,3 @@
-
 doctype html
 html
     head
@@ -10,23 +9,30 @@ html
         div(id="breadboard")
             div(id="result")
                 h3(id="calcDisplay") 0
-
-            //- 
-                Uncomment if you want use js_like_mixin or Buttons__numpad WARNING!!!  
-                include /kit/num__pad/numpad.pug
-                -var numpad__items=["C", "clear", "00", "double_zero", "%", "division", "7", "seven", "8", "eight", "9","nine", "*", "umnozhit", "4","four", "5", "five", "6", "six", "-","minus", "1","one","2","two", "3","thri","+","plus", "0","zero", ".","point", "=","ravno"]
-                +numpad(numpad__items)
-
-            //- 
-                Pug_mixin -- unccoment if you use js_like_mixin or buttons_numpad
-                include /kit/num__pad/pug__numpad.pug
-                -var numpad__items=[{title:"C", date:"clear"}, {title:"00", date:"double_zero"}, {title:"%", date:"division"}, {title:"7", date:"seven"}, {title:"8", date:"eight"}, {title:"9", date:"nine"}, {title:"*", date:"umnozhit"}, {title:"4", date:"four"}, {title:"5", date:"five"}, {title:"6", date:"six"}, {title:"-", date:"minus"}, {title:"1", date:"one"}, {title:"2", date:"two"}, {title:"3", date:"thri"}, {title:"+", date:"plus"}, {title:"0", date:"zero"}, {title:".", date:"point"}, {title:"=", date:"ravno"}]
-                +numpad(numpad__items)
-
-            //- Buttons_numpad
-            include /kit/num__pad/buttons_numpad.pug
-            -var numpad__items=[{class:"numbers", title:"C", date:"clear"}, {class:"numbers", title:"00", date:"double_zero"}, {class:"arithmetic", title:"/", date:"division"}, {class:"numbers", title:"7", date:"seven"}, {class:"numbers", title:"8", date:"eight"}, {class:"numbers", title:"9", date:"nine"}, {class:"arithmetic", title:"*", date:"multiplication"}, {class:"numbers", title:"4", date:"four"}, {class:"numbers", title:"5", date:"five"}, {class:"numbers", title:"6", date:"six"}, {class:"arithmetic", title:"-", date:"subtraction"}, {class:"numbers", title:"1", date:"one"}, {class:"numbers", title:"2", date:"two"}, {class:"numbers", title:"3", date:"thri"}, {class:"arithmetic", title:"+", date:"addition"}, {class:"numbers", title:"0", date:"zero"}, {class:"point", title:".", date:"point"}, {class:"answer", title:"=", date:"answer"}]
-            +numpad(numpad__items)
-
+            div(id="numpad")
+                //- Создаем кнопочки
+                include /kit/num__pad/buttons_numpad.pug
+                -
+                    var numpad__items = [
+                        {class:"numbers", title:"C", date:"clear"},
+                        {class:"numbers", title:"00", date:"double_zero"},
+                        {class:"arithmetic", title:"/", date:"division"},
+                        {class:"numbers", title:"7", date:"seven"},
+                        {class:"numbers", title:"8", date:"eight"},
+                        {class:"numbers", title:"9", date:"nine"},
+                        {class:"arithmetic", title:"*", date:"multiplication"},
+                        {class:"numbers", title:"4", date:"four"},
+                        {class:"numbers", title:"5", date:"five"},
+                        {class:"numbers", title:"6", date:"six"},
+                        {class:"arithmetic", title:"-", date:"subtraction"},
+                        {class:"numbers", title:"1", date:"one"},
+                        {class:"numbers", title:"2", date:"two"},
+                        {class:"numbers", title:"3", date:"thri"},
+                        {class:"arithmetic", title:"+", date:"addition"},
+                        {class:"numbers", title:"0", date:"zero"},
+                        {class:"point", title:".", date:"point"},
+                        {class:"answer", title:"=", date:"answer"}
+                    ]
+                +numpad__buttons(numpad__items)
         footer
             script(src="https://yastatic.net/jquery/3.3.1/jquery.min.js")

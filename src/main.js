@@ -60,6 +60,13 @@ function add_arithmetic(actual_value){
     return number_value;
 };
 
+function answer_clear(){
+    // Reset calculator after answer/ global variables
+    // TO DO with point_value after answer
+    action_value = 0;
+    memory_value ="";
+    point_value = false;
+}
   
 var math_answer = {
     // Return answer to programm
@@ -93,6 +100,7 @@ $(document).ready(function() {
     $('.answer').click(function() {
         let value = math_answer[action_value](memory_value, number_value);
         number_value = value;
+        answer_clear();
         $('#calcDisplay').text(number_value);
     });
 });

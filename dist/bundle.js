@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"h1{\\n    color: green;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"#breadboard {\\n  margin:0 auto;\\n  display: flex;\\n  justify-content: center;\\n  width: 30%;\\n  flex-direction: column;\\n}\\n\\ndiv, h3 {\\n   display: flex;\\n   border-style: solid;\\n   border-width: thin;\\n}\\n\\nh1 {\\n    text-align:center;\\n}\\n\\nh3 {\\n    justify-content: right;\\n    text-align: right;\\n    width: 90%;\\n}\\n\\n#result {\\n    width: 100%;\\n    justify-content: center;\\n}\\n\\n#numpad {\\n    display: grid;\\n    grid-template-columns: repeat(4, 1fr);\\n    grid-template-rows: repeat(5, 35px);\\n}\\n#double_zero{\\n   grid-column-start: 2;\\n   grid-column-end: 4;\\n}\\n\\n#zero {\\n   grid-column-start: 1;\\n   grid-column-end: 3;\\n}\\n\\n@media (max-width: 500px) { \\n    h1{\\n        color: green;\\n    }\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 

@@ -1,3 +1,49 @@
-h1{
-    color: green;
+#breadboard {
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  flex-direction: column;
+}
+
+div, h3 {
+   display: flex;
+   border-style: solid;
+   border-width: thin;
+}
+
+h1 {
+    text-align:center;
+}
+
+h3 {
+    justify-content: right;
+    text-align: right;
+    width: 90%;
+}
+
+#result {
+    width: 100%;
+    justify-content: center;
+}
+
+#numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 35px);
+}
+#double_zero{
+   grid-column-start: 2;
+   grid-column-end: 4;
+}
+
+#zero {
+   grid-column-start: 1;
+   grid-column-end: 3;
+}
+
+@media (max-width: 500px) { 
+    h1{
+        color: green;
+    }
 }

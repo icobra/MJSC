@@ -80,6 +80,16 @@ var math_answer = {
         {return parseFloat(a) / parseFloat(b); }
 }
 
+function new_point(number_value){
+    let point_index = number_value.toString();
+    point_index = point_index.indexOf(".");
+    if (point_index >= 0){
+        point_value = true;
+    } else {
+        point_value = false;
+    }
+}
+
 
 $(document).ready(function() {
     $('.numbers').click(function(){
@@ -101,6 +111,9 @@ $(document).ready(function() {
         let value = math_answer[action_value](memory_value, number_value);
         number_value = value;
         answer_clear();
+        console.log(number_value);
+        new_point(number_value);
+        console.log(number_value);
         $('#calcDisplay').text(number_value);
     });
 });

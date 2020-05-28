@@ -56,9 +56,11 @@ function add_arithmetic(actual_value){
         memory_value = number_value;
         action_value = actual_value;
         number_value = 0;
+        point_value = false;
     }
     return number_value;
 };
+
 
 function answer_clear(){
     // Reset calculator after answer/ global variables
@@ -67,6 +69,7 @@ function answer_clear(){
     memory_value ="";
     point_value = false;
 }
+
   
 var math_answer = {
     // Return answer to programm
@@ -80,7 +83,9 @@ var math_answer = {
         {return parseFloat(a) / parseFloat(b); }
 }
 
-function new_point(number_value){
+
+function check_point(number_value){
+    // Check point simbol in answer. 
     let point_index = number_value.toString();
     point_index = point_index.indexOf(".");
     if (point_index >= 0){
@@ -108,11 +113,15 @@ $(document).ready(function() {
         $('#calcDisplay').text(number_value);
     });
     $('.answer').click(function() {
+        // Check code
+        console.log('memory value: ' + memory_value);
+        console.log('action value: ' + action_value);
+        console.log('number value: ' + number_value);
         let value = math_answer[action_value](memory_value, number_value);
         number_value = value;
         answer_clear();
         console.log(number_value);
-        new_point(number_value);
+        check_point(number_value);
         console.log(number_value);
         $('#calcDisplay').text(number_value);
     });
